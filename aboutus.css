@@ -79,6 +79,12 @@ background-position: right bottom;
   height: 30px;
   
 }
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: white;
+}
 
 /* Links */
 .nav-links {
