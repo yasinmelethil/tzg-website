@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+  <title>Navbar Test</title>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-yH8yc7A+z7JvIYx+z+ThgyWteq3a6ZZGJE5p09Dji3OViQOkHoXYX4eKaeyIz0b6MBusK3H8iPiX8C+X6pJQZg=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+  <style>
+   .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #fff;
+}
+
+.nav-links ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+.nav-links ul li a {
+  text-decoration: none;
+  color: #333;
+}
+
+.dropdown-content li{
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  margin-top: 5px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.dropdown:hover .dropdown-content li{
+  display: block;
+}
+
+.right-section {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.logo-img img {
+  height: 40px;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background: #fff;
+    padding: 20px;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+
+  </style>
+   <script src="https://kit.fontawesome.com/eb8a1b5262.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <header class="navbar heebo">
+  <div class="logo1">
+    <span class="logo-img"><img src="imgs/TZG11.png" alt="Logo"></span>
+  </div>
+
+  <nav class="nav-links" id="nav-links">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li class="dropdown">
+        <a href="services.html">Services <i class="fas fa-chevron-down"></i></a>
+        <ul class="dropdown-content">
+          <li><a href="#">Service 1</a></li>
+          <li><a href="#">Service 2</a></li>
+        </ul>
+      </li>
+      <li><a href="aboutus.html">About</a></li>
+      <li><a href="#">Blog</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="right-section">
+    <i class="fas fa-search search-icon"></i>
+    <a href="#" class="quote-btn">Sign In/Register</a>
+    <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+  </div>
+</header>
+
+
+  <script>
+   
+  const toggleBtn = document.getElementById('menu-toggle');
+  const navLinks = document.getElementById('nav-links');
+
+  toggleBtn.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+
+
+  </script>
+
+</body>
+</html>

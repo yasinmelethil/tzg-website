@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>contact</title>
+    <link href="contact.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/eb8a1b5262.js" crossorigin="anonymous"></script>
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  
+</head>
+<body>
+       <div class="section1">
+          <header class="navbar heebo">
+  <div class="logo1">
+    <span class="logo-img"><img src="imgs/TZG11.png" alt="Logo"></span>
+  </div>
+
+  <nav class="nav-links" id="nav-links">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li class="dropdown">
+        <a href="services.html">Services <i class="fas fa-chevron-down"></i></a>
+        <ul class="dropdown-content">
+          <li><a href="#">Service 1</a></li>
+          <li><a href="#">Service 2</a></li>
+        </ul>
+      </li>
+      <li><a href="aboutus.html">About</a></li>
+      <li><a href="#">Blog</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="right-section">
+    <i class="fas fa-search search-icon"></i>
+    <a href="#" class="quote-btn">Log in</a>
+    <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+  </div>
+</header>
+  <div class="service-header">
+    <h1 class="heebo">Contact Us</h1>
+    <p class="montserrat">Explore the range of services we offer to help your business thrive online.</p>  
+  </div>
+    </div>
+    <section class="contact-hero">
+  <div class="contact-container">
+    <div class="contact-left">
+      <h5 class="montserrat">LET'S MAKE IT HAPPENS</h5>
+      <h1 class="heebo">Don't Hesitate To<br>Get in Touch.</h1>
+      <div class="underline"></div>
+      <p class="montserrat">
+        Eu feugiat tincidunt vitae, tincidunt purus aliquam pharetra viverra massa vitae mi arcu tortor
+        et cursus tempor netus sit vitae habitasse aliquam eu vel lacinia auctor sed nisl pellentesque
+        morbi molestie condimentum.
+      </p>
+      <a href="mailto:mail@example.com" class="email-link montserrat">Email Us →</a>
+    </div>
+
+    <div class="contact-right">
+      <div class="contact-info">
+        <i class="fas fa-map-marker-alt"></i>
+        <div>
+          <label>Address</label>
+          <p>123 Demo St, Lakeland, FL 45678, United States.</p>
+        </div>
+      </div>
+      <div class="contact-info">
+        <i class="fas fa-phone-alt"></i>
+        <div>
+          <label class="montserrat">Phone</label>
+          <p class="montserrat">+1 123-456-7890</p>
+        </div>
+      </div>
+      <div class="contact-info">
+        <i class="fas fa-envelope"></i>
+        <div>
+          <label class="montserrat">Email</label>
+          <p class="montserrat">mail@example.com</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<div class="section7">
+  <div class="contact-section">
+  <div class="left">
+    <h1 class="heebo">Ready to Take Your Internet <br> Marketing to the next Level?</h1>
+    <p class="bold-text montserrat">
+      Amet ut elementum, ipsum lobortis amet, ut duis facilisis purus lorem ac pharetra, nunc mi egestas diam id nisl consequat aliquam et nunc justo.
+    </p>
+    <p class="montserrat">
+      Risus tincidunt in laoreet risus dignissim montes, velit egestas eu nec et in tincidunt amet, etiam at turpis adipiscing volutpat amet, adipiscing purus elementum risus, vitae euismod leo amet eget quam enim blandit diam quis diam proin enim suspendisse massa.
+    </p>
+  </div>
+
+  <div class="right">
+    <h2>Let’s talk</h2>
+    <form>
+      <input type="text" placeholder="Full name" required>
+      <input type="email" placeholder="Email address" required>
+      <textarea placeholder="Your message" rows="6" required></textarea>
+      <button type="submit">Get a Quote</button>
+    </form>
+  </div>
+</div>
+
+</div>
+
+<!-- Font Awesome for icons -->
+<!-- Placeholder for footer -->
+<div id="footer"></div>
+<script>
+   
+  const toggleBtn = document.getElementById('menu-toggle');
+  const navLinks = document.getElementById('nav-links');
+
+  toggleBtn.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+
+
+  </script>
+<script>
+  // Dynamically load the footer HTML
+  fetch('footer.html')
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById('footer').innerHTML = data;
+    });
+
+  // Dynamically load the CSS
+  const link = document.createElement('link');
+  link.rel = 'stylesheet';
+  link.href = 'footer.css';
+  document.head.appendChild(link);
+
+  // Optional: Load Font Awesome dynamically too
+  const fa = document.createElement('link');
+  fa.rel = 'stylesheet';
+  fa.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css';
+  document.head.appendChild(fa);
+</script>
+
+</body>
+</html>

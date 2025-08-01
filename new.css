@@ -1,0 +1,109 @@
+/* Base navbar styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: aqua;
+}
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+  background-color: #fff;
+  
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+}
+
+.links-list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.links-list li {
+  margin: 0 1rem;
+}
+
+/* Dropdown basics */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Hide mobile toggle by default */
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+}
+.logo-img img{
+    width: 60px;
+    height: 30px;
+}
+
+
+
+@media screen and (max-width: 768px) {
+  /* Show hamburger */
+  .logo-img img {
+    max-width: 100px;
+  }
+  .menu-toggle {
+    display: block;
+  }
+
+  /* Hide links off-canvas */
+  .nav-links {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    height: 100vh;
+    width: 75%;
+    max-width: 300px;
+    background-color: #fff;
+    flex-direction: column;
+    align-items: start;
+    padding: 2rem 1rem;
+    transition: left 0.3s ease;
+    z-index: 1000;
+  }
+
+  /* When active, slide in */
+  .nav-links.active {
+    left: 0;
+  }
+
+  /* Stack links vertically */
+  .links-list {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .links-list li {
+    width: 100%;
+    margin: 1rem 0;
+  }
+
+  .links-list a {
+    font-size: 1.25rem;
+  }
+
+  /* Dropdown on mobile: toggle via parent click */
+  .dropdown-content {
+    position: static;
+    box-shadow: none;
+    padding-left: 1rem;
+  }
+}
