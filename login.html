@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login & Signup</title>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <style>
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Montserrat", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+            ;
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #784ffe, #00f2fe);
+            padding: 20px;
+            background-image: url(imgs/digital-marketing-agency-hero-img-bg.jpg);
+            background-size: cover;
+            background-position: center;
+            
+            
+        }
+        .montserrat {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+#login-form{
+    color: #eee;
+}
+#signup-form{
+    color: #eee;
+}
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #fff;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        a:hover {
+            text-decoration: underline;
+}
+        .container {
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            width: 100%;
+            max-width: 400px;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+           
+        }
+       
+        .tab-buttons {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+
+        .tab-buttons button {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            background: #eee;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .tab-buttons button.active {
+            background: #4facfe;
+            color: white;
+            font-weight: bold;
+        }
+
+        form {
+            display: none;
+            flex-direction: column;
+        }
+
+        form.active {
+            display: flex;
+        }
+
+        label {
+            margin-bottom: 5px;
+            font-size: 14px;
+        }
+
+        input {
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+        }
+
+        button.submit-btn {
+            background: #4facfe;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        button.submit-btn:hover {
+            background: #3a8bd9;
+        }
+
+        .forgot-link {
+            font-size: 13px;
+            color: #4facfe;
+            text-decoration: none;
+            margin-bottom: 10px;
+            align-self: flex-end;
+            transition: color 0.3s;
+        }
+        .forgot-link:hover {
+            color: #3a8bd9;
+            text-decoration: underline;
+        }
+
+        .error-msg {
+            color: #d32f2f;
+            font-size: 13px;
+            margin-bottom: 10px;
+            display: none;
+        }
+
+        @media (max-width: 500px) {
+            .container {
+                padding: 15px;
+            }
+
+            .tab-buttons button {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Tabs -->
+        <div class="tab-buttons" role="tablist">
+            <button id="login-tab" class="active" role="tab" aria-selected="true" aria-controls="login-form">Login</button>
+            <button id="signup-tab" role="tab" aria-selected="false" aria-controls="signup-form">Signup</button>
+        </div>
+
+        <!-- Login Form -->
+        <form id="login-form" class="active" method="POST" action="login.php" aria-labelledby="login-tab">
+            <label for="login-email">Email</label>
+            <input type="email" id="login-email" name="email" placeholder="Enter email" required autocomplete="username">
+            
+            <label for="login-password">Password</label>
+            <input type="password" id="login-password" name="password" placeholder="Enter password" required autocomplete="current-password">
+
+            <a href="#" class="forgot-link">Forgot Password?</a>
+
+            <button type="submit" class="submit-btn">Login</button>
+        </form>
+
+        <!-- Signup Form -->
+        <form id="signup-form" method="POST" action="signup.php" aria-labelledby="signup-tab">
+            <div class="error-msg" id="signup-error"></div>
+            <label for="signup-name">Full Name</label>
+            <input type="text" id="signup-name" name="name" placeholder="Enter full name" required autocomplete="name">
+
+            <label for="signup-email">Email</label>
+            <input type="email" id="signup-email" name="email" placeholder="Enter email" required autocomplete="email">
+
+            
+            <label for="signup-mob">Mobile Number:</label>
+            <input id="signup-mob" type="tel" name="mobile" pattern="[0-9]{10}" placeholder="10-digit mobile" required>
+
+            <label for="signup-gst">GST Number:</label>
+            <input id="signup-gst" type="text" name="gst_number" pattern="[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z][A-Z0-9]Z[A-Z0-9]" placeholder="15-char GSTIN">
+
+            <label for="signup-password">Password</label>
+            <input type="password" id="signup-password" name="password" placeholder="Enter password" required autocomplete="new-password">
+
+            <label for="signup-confirm">Confirm Password</label>
+            <input type="password" id="signup-confirm" name="confirm" placeholder="Confirm password" required autocomplete="new-password">
+
+
+            <button type="submit" class="submit-btn">Signup</button>
+        </form>
+    </div>
+
+    <script>
+        const loginTab = document.getElementById('login-tab');
+        const signupTab = document.getElementById('signup-tab');
+        const loginForm = document.getElementById('login-form');
+        const signupForm = document.getElementById('signup-form');
+        const signupError = document.getElementById('signup-error');
+
+        loginTab.addEventListener('click', () => {
+            loginTab.classList.add('active');
+            signupTab.classList.remove('active');
+            loginForm.classList.add('active');
+            signupForm.classList.remove('active');
+            loginTab.setAttribute('aria-selected', 'true');
+            signupTab.setAttribute('aria-selected', 'false');
+        });
+
+        signupTab.addEventListener('click', () => {
+            signupTab.classList.add('active');
+            loginTab.classList.remove('active');
+            signupForm.classList.add('active');
+            loginForm.classList.remove('active');
+            signupTab.setAttribute('aria-selected', 'true');
+            loginTab.setAttribute('aria-selected', 'false');
+        });
+
+        signupForm.addEventListener('submit', function(e) {
+            const password = document.getElementById('signup-password').value;
+            const confirm = document.getElementById('signup-confirm').value;
+            if (password !== confirm) {
+                signupError.textContent = "Passwords do not match.";
+                signupError.style.display = "block";
+                e.preventDefault();
+            } else {
+                signupError.style.display = "none";
+            }
+        });
+    </script>
+</body>
+</html>
