@@ -37,6 +37,12 @@
   font-weight: <weight>;
   font-style: normal;
 }
+               .logo {
+    display: flex;
+    justify-content: center; /* horizontal center */
+    align-items: center;     /* vertical center (optional) */
+    padding: 20px 20px;
+}
 #login-form{
     color: #eee;
 }
@@ -162,6 +168,9 @@
 <body>
     <div class="container">
         <!-- Tabs -->
+        <div class="logo">
+            <img src="imgs/TZG11.png" alt="Logo" style="width: 100px; height: auto;">
+         </div>
         <div class="tab-buttons" role="tablist">
             <button id="login-tab" class="active" role="tab" aria-selected="true" aria-controls="login-form">Login</button>
             <button id="signup-tab" role="tab" aria-selected="false" aria-controls="signup-form">Signup</button>
@@ -246,3 +255,4 @@
     </script>
 </body>
 </html>
+
